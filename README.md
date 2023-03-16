@@ -1,12 +1,12 @@
 # Automate certificate generation and mailing
 
 - **This script written in NodeJS is a straightforward tool capable of generating and mailing certificates in bulk, utilizing data from a spreadsheet (.xlsx).**
-<br>
 
 - **The script creates certificates by utilizing a fillable PDF template and subsequently sends them to the designated email address.**
-<br>
 
 - **Initially, I developed this project for sending MLSA certificates in bulk. However, it can be customized to generate certificates with a template of your choice. For instructions on how to do this, please refer to the "Changing Certificate Template" section.**  
+
+- **Please note that there is limit on sending emails in bulk using a standard gmail account, so you may have to send in batches.**
 
 <hr>
 
