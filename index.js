@@ -9,13 +9,19 @@ const isEmail = (email) => {
     return re.test(email);
 }
 
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
 // reading spreadsheet to obtain the data 
-readXlsxFile(fs.createReadStream('./data.xlsx')).then((rows) => {
-    rows.map((row) => {
+readXlsxFile(fs.createReadStream('./data.xlsx')).then(async (rows) => {
+    rows.map(async (row) => {
         // check for validity of email and name
         if (row[0].length > 1 && isEmail(row[1])) {
             // if valid call genCert which will generate the certifiacte and email it
-            genCert(row[0], row[1]);
+            delay(10000).then(async () => {
+                await genCert(row[0], row[1]);
+            });
         }
     })
 })

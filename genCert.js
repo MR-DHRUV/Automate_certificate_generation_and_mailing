@@ -7,6 +7,10 @@ const PDFDocument = PDFLib.PDFDocument;
 const details = require('./eventDetails')
 const authifyMailer = require('./authifyMailer')
 
+function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+}
+
 const genCert = async (name,email) => {
     
     // reading template 
@@ -37,7 +41,9 @@ const genCert = async (name,email) => {
     await fs.writeFileSync(outputPath,pdfBytes);
 
     // mailing
-    await authifyMailer(email,details.subject,details.body,outputPath,"certificate.pdf")
+    await delay(15000).then(async () => {
+        await authifyMailer(email,details.subject,details.body,outputPath,"certificate.pdf")
+    });
 }
 
 module.exports = genCert;

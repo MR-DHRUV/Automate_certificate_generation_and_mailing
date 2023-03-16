@@ -4,7 +4,7 @@ var nodemailer = require('nodemailer');
 
 
 // General mailer to send emails
-const authifyMailer = (to, sub, body, filePath, fileName) => {
+const authifyMailer = async(to, sub, body, filePath, fileName) => {
     const mailPass = process.env.EMAIL_PASS2;
     const mail = process.env.EMAIL;
 
