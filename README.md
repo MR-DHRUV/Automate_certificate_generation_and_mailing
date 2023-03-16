@@ -8,6 +8,8 @@
 
 - **Initially, I developed this project for sending MLSA certificates in bulk. However, it can be customized to generate certificates with a template of your choice. For instructions on how to do this, please refer to the "Changing Certificate Template" section.**  
 
+- **Please note that there is limit on sending emails in bulk using a standard gmail account, so you may have to send in batches.**
+
 <hr>
 
 ## Setup for sending MLSA Certificates
