@@ -1,7 +1,7 @@
 require('dotenv').config()
-var nodemailer = require('nodemailer');
+const nodemailer = require('nodemailer');
 
-
+const details = require('./eventDetails');
 
 // General mailer to send emails
 const authifyMailer = async(to, sub, body, filePath, fileName) => {
@@ -17,7 +17,7 @@ const authifyMailer = async(to, sub, body, filePath, fileName) => {
     });
 
     var mailOptions = {
-        from: `Dhruv Gupta <${mail}>`,
+        from: `${details.ambassadorName} <${mail}>`,
         to: to,
         subject: sub,
         text: body,
